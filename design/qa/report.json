@@ -1,0 +1,146 @@
+{
+  "errors": [],
+  "desktop": {
+    "viewport": 1512,
+    "contentWidth": 1512,
+    "height": 9026,
+    "fonts": [
+      {
+        "family": "Forum Helvetica",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "Forum Helvetica",
+        "weight": "300",
+        "status": "loaded"
+      },
+      {
+        "family": "Forum Albert Sans",
+        "weight": "400",
+        "status": "loaded"
+      }
+    ],
+    "brokenImages": [],
+    "links": [
+      {
+        "text": "Принять участие",
+        "href": "#tickets"
+      },
+      {
+        "text": "Подать заявку",
+        "href": "tel:+79013404303"
+      },
+      {
+        "text": "Программа",
+        "href": "#program"
+      },
+      {
+        "text": "Формат",
+        "href": "#formats"
+      },
+      {
+        "text": "Спикеры",
+        "href": "#speakers"
+      },
+      {
+        "text": "+7 901 340 43 03",
+        "href": "tel:+79013404303"
+      },
+      {
+        "text": "Принять участие",
+        "href": "#tickets"
+      },
+      {
+        "text": "Принять участие  →",
+        "href": "tel:+79013404303"
+      },
+      {
+        "text": "Принять участие  →",
+        "href": "tel:+79013404303"
+      }
+    ],
+    "sections": [
+      {
+        "id": "home",
+        "top": 0,
+        "height": 709
+      },
+      {
+        "id": "atmosphere",
+        "top": 709,
+        "height": 617.078125
+      },
+      {
+        "id": "changes",
+        "top": 1394,
+        "height": 496
+      },
+      {
+        "id": "format-map",
+        "top": 0,
+        "height": 0
+      },
+      {
+        "id": "program",
+        "top": 2795,
+        "height": 1004
+      },
+      {
+        "id": "formats",
+        "top": 0,
+        "height": 0
+      },
+      {
+        "id": "invitation",
+        "top": 5344,
+        "height": 674
+      },
+      {
+        "id": "speakers",
+        "top": 6122,
+        "height": 636
+      },
+      {
+        "id": "gallery",
+        "top": 6847,
+        "height": 759
+      },
+      {
+        "id": "tickets",
+        "top": 7695,
+        "height": 566.390625
+      },
+      {
+        "id": "benefits",
+        "top": 8349,
+        "height": 611.75
+      }
+    ]
+  },
+  "navigation": {
+    "hash": "#speakers",
+    "speakersTop": 689
+  },
+  "ticketsNavigation": {
+    "hash": "#tickets",
+    "ticketsTop": 1827
+  },
+  "smallViewports": [
+    {
+      "width": 1280,
+      "contentWidth": 1280,
+      "height": 7641
+    },
+    {
+      "width": 768,
+      "contentWidth": 768,
+      "height": 4585
+    },
+    {
+      "width": 390,
+      "contentWidth": 390,
+      "height": 2328
+    }
+  ]
+}

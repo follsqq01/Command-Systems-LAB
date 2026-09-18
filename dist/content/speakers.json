@@ -1,0 +1,102 @@
+[
+  {
+    "id": "alexander-sychev",
+    "name": "Александр Сычев",
+    "description": "Предприниматель, основатель ST education, сооснователь и ex-CEO Presium Education, консультант по коммуникациям и презентациям",
+    "photo": "assets/a0429.png",
+    "fit": "contain",
+    "photoX": 59,
+    "photoY": 17,
+    "zoom": 1.3
+  },
+  {
+    "id": "diana-gladkikh",
+    "name": "Диана Гладких",
+    "description": "Партнёр группы компаний КЕД, методист с 13-летним опытом, сертифицированный коуч и карьерный консультант международного уровня",
+    "photo": "assets/c6b86.png",
+    "fit": "contain",
+    "photoX": 50,
+    "photoY": 34,
+    "zoom": 1.95
+  },
+  {
+    "id": "roman-adushkin",
+    "name": "Роман Адушкин",
+    "description": "Бизнесмен, сооснователь группы компаний NRG, человек идей и смыслов, алхимик",
+    "photo": "assets/36ea3.png",
+    "fit": "contain",
+    "photoX": 45,
+    "photoY": 65,
+    "zoom": 1.75
+  },
+  {
+    "id": "ekaterina-kraivanova",
+    "name": "Екатерина Крайванова",
+    "description": "Партнёр КЕД, преподаватель ВШЭ, коуч ICF, выпускница SKOLKOVO, драйвер Noôdome",
+    "photo": "assets/a6dee.png",
+    "fit": "contain",
+    "photoX": 80,
+    "photoY": 8,
+    "zoom": 1.6
+  },
+  {
+    "id": "157a1835996c48bc9247c705e7b72cfa",
+    "name": "Фонталин Евгений",
+    "description": "Партнер группы компаний КЕД: платформа «Металогика»",
+    "photo": "uploads/speakers/e28a76b981dae629d59e.png",
+    "fit": "cover",
+    "photoX": 53,
+    "photoY": 14,
+    "zoom": 1
+  },
+  {
+    "id": "7775fbf8fdcd4fcaa77ab1c355bddb1c",
+    "name": "Алексей Никифоров",
+    "description": "Более 10 лет возглавлял юридический блок СИБУРа. Основатель Академии юридического менеджмента и профессиональных сообществ, объединивших свыше 300 руководителей",
+    "photo": "uploads/speakers/1ad65c6bc103a09f9f79.png",
+    "fit": "cover",
+    "photoX": 50,
+    "photoY": 6,
+    "zoom": 1
+  },
+  {
+    "id": "d5bee9afefed4dd0a29be59e6065539b",
+    "name": "РОМАН ГУБНОВ",
+    "description": "Директор по развитию Авито Работы",
+    "photo": "uploads/speakers/2a55e47ccc62c36af1d1.png",
+    "fit": "cover",
+    "photoX": 54,
+    "photoY": 11,
+    "zoom": 1.7
+  },
+  {
+    "id": "74d6f8bf77dc4ca7bfa8054fcaa08a84",
+    "name": "САРКИЗ Атасенов",
+    "description": "Founder, CEO, noumy.ai",
+    "photo": "uploads/speakers/a22827d69fb22a5cbb15.png",
+    "fit": "cover",
+    "photoX": 50,
+    "photoY": 0,
+    "zoom": 1
+  },
+  {
+    "id": "952c730a63fd4dfb8c78a6363b69b0c5",
+    "name": "Алексей Захаров",
+    "description": "Генеральный директор «Ю-Лайф» и создатель VOLK CrossFit. Более 20 лет работает с командами и бизнес-системами, создаёт сообщества вокруг брендов и превращает клиентов в амбассадоров",
+    "photo": "uploads/speakers/b56ac5739f19a9e4f157.png",
+    "fit": "cover",
+    "photoX": 54,
+    "photoY": 28,
+    "zoom": 1.6
+  },
+  {
+    "id": "0f816032c98548e4bb4fc8e81d5d33ca",
+    "name": "Андрей Завадских",
+    "description": "СЕО Точка Банк. Работает в компании более 20 лет, последние пять из них — в должности генерального директора. В Точка Банке отвечает за стратегию и развитие экосистемы",
+    "photo": "uploads/speakers/303f3343cd0b9de1aa3b.png",
+    "fit": "cover",
+    "photoX": 50,
+    "photoY": 0,
+    "zoom": 1.25
+  }
+]

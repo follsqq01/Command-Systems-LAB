@@ -1,0 +1,212 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "width": 1512,
+      "height": 982,
+      "overflow": false,
+      "program": {
+        "height": 982,
+        "lastBottom": 932.921875
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-15.8728%)"
+      },
+      "formatsEnd": {
+        "bottom": 942.640625,
+        "right": 1472.671875,
+        "viewportHeight": 982,
+        "viewportWidth": 1512
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-8.82764%)"
+      },
+      "speakersEnd": {
+        "bottom": 817.453125,
+        "right": 1472.203125,
+        "viewportHeight": 982,
+        "viewportWidth": 1512
+      },
+      "brokenImages": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "overflow": false,
+      "program": {
+        "height": 720,
+        "lastBottom": 684
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-16.1388%)"
+      },
+      "formatsEnd": {
+        "bottom": 690.546875,
+        "right": 1246.71875,
+        "viewportHeight": 720,
+        "viewportWidth": 1280
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-8.8301%)"
+      },
+      "speakersEnd": {
+        "bottom": 660.578125,
+        "right": 1246.546875,
+        "viewportHeight": 720,
+        "viewportWidth": 1280
+      },
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "program": {
+        "height": 1024,
+        "lastBottom": 993.296875
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-26.7153%)"
+      },
+      "formatsEnd": {
+        "bottom": 1004.234375,
+        "right": 737.28125,
+        "viewportHeight": 1024,
+        "viewportWidth": 768
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-34.9805%)"
+      },
+      "speakersEnd": {
+        "bottom": 993.28125,
+        "right": 738.09375,
+        "viewportHeight": 1024,
+        "viewportWidth": 768
+      },
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "program": {
+        "height": 844,
+        "lastBottom": 818.6875
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-25.3761%)"
+      },
+      "formatsEnd": {
+        "bottom": 827.078125,
+        "right": 374.40625,
+        "viewportHeight": 844,
+        "viewportWidth": 390
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-35.0455%)"
+      },
+      "speakersEnd": {
+        "bottom": 818.578125,
+        "right": 374.03118896484375,
+        "viewportHeight": 844,
+        "viewportWidth": 390
+      },
+      "brokenImages": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "overflow": false,
+      "program": {
+        "height": 568,
+        "lastBottom": 550.96875
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-25.5518%)"
+      },
+      "formatsEnd": {
+        "bottom": 556.34375,
+        "right": 307.203125,
+        "viewportHeight": 568,
+        "viewportWidth": 320
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-34.9771%)"
+      },
+      "speakersEnd": {
+        "bottom": 550.96875,
+        "right": 307.0625,
+        "viewportHeight": 568,
+        "viewportWidth": 320
+      },
+      "brokenImages": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "overflow": false,
+      "program": {
+        "height": 390,
+        "lastBottom": 370.515625
+      },
+      "overflowingText": [],
+      "flip": "true",
+      "lift": true,
+      "drag": true,
+      "formats": {
+        "top": 0,
+        "transform": "translateY(-26.5475%)"
+      },
+      "formatsEnd": {
+        "bottom": 374.796875,
+        "right": 822.03125,
+        "viewportHeight": 390,
+        "viewportWidth": 844
+      },
+      "speakers": {
+        "top": 0,
+        "transform": "translateX(-8.84371%)"
+      },
+      "speakersEnd": {
+        "bottom": 374.40625,
+        "right": 822.015625,
+        "viewportHeight": 390,
+        "viewportWidth": 844
+      },
+      "brokenImages": []
+    },
+    {
+      "reducedMotion": "relative"
+    }
+  ]
+}

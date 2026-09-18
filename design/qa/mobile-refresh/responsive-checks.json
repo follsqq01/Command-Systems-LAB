@@ -1,0 +1,114 @@
+[
+  {
+    "brokenImages": 0,
+    "desktopMapVisible": "none",
+    "markers": [
+      37.55,
+      37.55,
+      37.55,
+      37.55,
+      37.55,
+      37.55,
+      37.55
+    ],
+    "orbitVisible": "block",
+    "overflowText": [
+      {
+        "cl": "ticket-price",
+        "text": "6 000 ₽"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "10 000 ₽"
+      }
+    ],
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "brokenImages": 0,
+    "desktopMapVisible": "block",
+    "markers": [
+      52,
+      52,
+      52,
+      52,
+      52,
+      52,
+      52
+    ],
+    "orbitVisible": "none",
+    "overflowText": [
+      {
+        "cl": "",
+        "text": "Лабораториякомандных систем"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "6 000 ₽"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "10 000 ₽"
+      }
+    ],
+    "scroll": 768,
+    "width": 768
+  },
+  {
+    "brokenImages": 0,
+    "desktopMapVisible": "block",
+    "markers": [
+      52,
+      52,
+      52,
+      52,
+      52,
+      52,
+      52
+    ],
+    "orbitVisible": "none",
+    "overflowText": [
+      {
+        "cl": "",
+        "text": "Лабораториякомандных систем"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "6 000 ₽"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "10 000 ₽"
+      }
+    ],
+    "scroll": 844,
+    "width": 844
+  },
+  {
+    "brokenImages": 0,
+    "desktopMapVisible": "block",
+    "markers": [
+      65.27,
+      65.27,
+      65.27,
+      65.27,
+      65.27,
+      65.27,
+      65.27
+    ],
+    "orbitVisible": "none",
+    "overflowText": [
+      {
+        "cl": "ticket-price",
+        "text": "6 000 ₽"
+      },
+      {
+        "cl": "ticket-price",
+        "text": "10 000 ₽"
+      }
+    ],
+    "scroll": 1280,
+    "width": 1280
+  }
+]
