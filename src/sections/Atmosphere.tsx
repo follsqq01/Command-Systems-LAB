@@ -44,7 +44,7 @@ export function Atmosphere() {
           ref={videoRef}
           className="atmosphere-video"
           src={asset("0917.mp4")}
-          poster={asset("0917-poster.jpg")}
+          poster={asset("0917-poster.webp")}
           aria-hidden="true"
           muted
           loop

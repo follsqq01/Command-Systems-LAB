@@ -1,12 +1,12 @@
 import { asset } from "../assets";
 const circles = [
-  ["04717.png", "Живое общение на форуме", false],
-  ["LOOK0642_resized.jpg", "Спикер выступает перед участниками", false],
+  ["04717.webp", "Живое общение на форуме", false],
+  ["LOOK0642_resized.webp", "Спикер выступает перед участниками", false],
   ["4f4fb.svg", "", true],
-  ["7fafc.png", "Участники обсуждают идеи на форуме", false],
-  ["LOOK0760_resized.jpg", "Спикер рассказывает о командной работе", false],
+  ["7fafc.webp", "Участники обсуждают идеи на форуме", false],
+  ["LOOK0760_resized.webp", "Спикер рассказывает о командной работе", false],
   ["1c100.svg", "", true],
-  ["071d8.png", "Команда участников форума", false],
+  ["071d8.webp", "Команда участников форума", false],
 ] as const;
 export function Benefits() {
   return (
