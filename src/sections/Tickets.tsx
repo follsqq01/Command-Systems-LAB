@@ -34,7 +34,7 @@ export function Tickets() {
                 <br />В день мероприятия — <Price value={last} />
               </p>
               <ActionLink className="button" destination="booking">
-                Принять участие →
+                Купить
               </ActionLink>
             </div>
           </article>

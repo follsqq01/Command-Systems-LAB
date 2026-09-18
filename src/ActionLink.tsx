@@ -6,7 +6,7 @@ export const destinations = {
   program: "#program",
   formats: "#formats",
   speakers: "#speakers",
-  tickets: ticketUrl,
+  tickets: "#tickets",
   phone: "tel:+79013404303",
   booking: ticketUrl,
   application: "tel:+79013404303",
