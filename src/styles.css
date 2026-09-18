@@ -796,9 +796,6 @@ img {
   gap: var(--gap);
 }
 .speakers-marquee-set--copy { display: none; }
-@keyframes speakers-marquee {
-  to { transform: translateX(calc(-50% - var(--gap) / 2)); }
-}
 .speaker-card {
   width: 25vw;
   height: 34vw;
@@ -1307,10 +1304,9 @@ img {
     align-items: stretch;
     will-change: transform;
     padding-inline: 0;
-    animation: speakers-marquee 45s linear infinite;
+    animation: none;
   }
   .speakers-marquee-set--copy { display: flex; }
-  .speakers.is-paused .speakers-track { animation-play-state: paused; }
   .speakers-pause {
     display: inline-flex;
     align-items: center;
@@ -1329,8 +1325,6 @@ img {
     cursor: pointer;
   }
   .speakers-pause:disabled { opacity: .45; cursor: default; }
-  .speakers-pause__icon { font-size: 13px; line-height: 1; }
-  .speakers-window .speaker-card { cursor: pointer; }
   .speaker-card {
     width: 79vw;
     height: auto;
@@ -1853,7 +1847,15 @@ img {
   .speakers-stage .section-heading h2 { font-size: var(--heading); }
   .speakers-stage .section-heading p, .benefits .section-heading p { font-size: 16px; line-height: 1.45; }
   .speakers-window { overflow: clip; }
-  .speakers:not(.is-editing) .speakers-window { touch-action: pan-y pinch-zoom; user-select: none; }
+  .speakers:not(.is-editing) .speakers-window {
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    user-select: none;
+  }
+  .speakers:not(.is-editing) .speakers-window::-webkit-scrollbar { display: none; }
   .speakers-track { gap: 16px; }
   .speaker-card { width: min(79vw, 340px); padding: 24px; gap: 24px; scroll-snap-align: start; }
   .speaker-copy h3 { font-size: 20px; }

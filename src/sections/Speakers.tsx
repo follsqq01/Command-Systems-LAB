@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent, type PointerEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent } from "react";
 import { useScrollStage } from "../interaction";
 
 type Speaker = {
@@ -25,47 +25,71 @@ export function Speakers() {
   const [paused, setPaused] = useState(false);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("");
-  const swipe = useRef<{ pointerId: number; x: number; y: number; dragging: boolean } | null>(null);
-  const swiped = useRef(false);
+  const scroller = useRef<HTMLDivElement>(null);
 
-  function startSwipe(event: PointerEvent<HTMLDivElement>) {
-    if (editing || !event.isPrimary || event.button !== 0 || !matchMedia("(max-width: 900px)").matches) return;
-    swiped.current = false;
-    swipe.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, dragging: false };
-  }
-
-  function moveSwipe(event: PointerEvent<HTMLDivElement>) {
-    const gesture = swipe.current;
-    if (!gesture || gesture.pointerId !== event.pointerId) return;
-    const dx = event.clientX - gesture.x;
-    const dy = event.clientY - gesture.y;
-    if (!gesture.dragging) {
-      if (Math.max(Math.abs(dx), Math.abs(dy)) < 8) return;
-      if (Math.abs(dy) > Math.abs(dx)) { swipe.current = null; return; }
-    }
+  useEffect(() => {
+    const viewport = scroller.current;
     const content = track.current;
-    const animation = content?.getAnimations().find((item) =>
-      item instanceof CSSAnimation && item.animationName === "speakers-marquee");
-    const duration = animation?.effect?.getComputedTiming().duration;
-    if (!content || !animation || typeof duration !== "number" || duration <= 0) return;
-    if (!gesture.dragging) {
-      event.currentTarget.setPointerCapture(event.pointerId);
-      gesture.dragging = true;
-      swiped.current = true;
-    }
-    // Shift the existing animation's phase, keeping autoplay and its pause state.
-    const distance = (content.getBoundingClientRect().width + Number.parseFloat(getComputedStyle(content).columnGap)) / 2;
-    const time = Number(animation.currentTime ?? 0) - dx / distance * duration;
-    animation.currentTime = ((time % duration) + duration) % duration;
-    gesture.x = event.clientX;
-    gesture.y = event.clientY;
-  }
-
-  function endSwipe(event: PointerEvent<HTMLDivElement>) {
-    if (swipe.current?.pointerId !== event.pointerId) return;
-    swipe.current = null;
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-  }
+    if (!viewport || !content || editing) return;
+    const mobile = matchMedia("(max-width: 900px)");
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+    let lastTime = 0;
+    let remainder = 0;
+    let touching = false;
+    let idleUntil = 0;
+    let expectedScroll = viewport.scrollLeft;
+    const deferAutoplay = () => { idleUntil = performance.now() + 1200; };
+    const onTouchStart = () => { touching = true; };
+    const onTouchEnd = () => { touching = false; deferAutoplay(); };
+    const onScroll = () => {
+      // Native swipes (including momentum) take priority over autoplay.
+      if (Math.abs(viewport.scrollLeft - expectedScroll) > 1) deferAutoplay();
+      expectedScroll = viewport.scrollLeft;
+    };
+    const tick = (now: number) => {
+      const elapsed = lastTime ? Math.min(now - lastTime, 50) : 0;
+      lastTime = now;
+      if (!touching && now >= idleUntil) {
+        const set = content.firstElementChild as HTMLElement | null;
+        const distance = (set?.getBoundingClientRect().width ?? 0) + Number.parseFloat(getComputedStyle(content).columnGap);
+        if (distance > 0) {
+          remainder += elapsed * distance / (Math.max(36, speakers.length * 7) * 1000);
+          const step = Math.floor(remainder);
+          remainder -= step;
+          if (step > 0) {
+            viewport.scrollLeft = (Math.max(0, viewport.scrollLeft) + step) % distance;
+            expectedScroll = viewport.scrollLeft;
+          }
+        }
+      }
+      frame = requestAnimationFrame(tick);
+    };
+    const sync = () => {
+      cancelAnimationFrame(frame);
+      lastTime = 0;
+      if (!mobile.matches || reducedMotion.matches) viewport.scrollLeft = 0;
+      else if (!paused && speakers.length > 0) frame = requestAnimationFrame(tick);
+    };
+    viewport.addEventListener("touchstart", onTouchStart, { passive: true });
+    viewport.addEventListener("touchend", onTouchEnd, { passive: true });
+    viewport.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    viewport.addEventListener("wheel", deferAutoplay, { passive: true });
+    viewport.addEventListener("scroll", onScroll, { passive: true });
+    mobile.addEventListener("change", sync);
+    reducedMotion.addEventListener("change", sync);
+    sync();
+    return () => {
+      cancelAnimationFrame(frame);
+      viewport.removeEventListener("touchstart", onTouchStart);
+      viewport.removeEventListener("touchend", onTouchEnd);
+      viewport.removeEventListener("touchcancel", onTouchEnd);
+      viewport.removeEventListener("wheel", deferAutoplay);
+      viewport.removeEventListener("scroll", onScroll);
+      mobile.removeEventListener("change", sync);
+      reducedMotion.removeEventListener("change", sync);
+    };
+  }, [editing, paused, speakers.length, track]);
 
   useEffect(() => {
     fetch(contentUrl, { cache: "no-store" })
@@ -195,20 +219,10 @@ export function Speakers() {
           </div>
         )}
         {!editing && <button className="speakers-pause" type="button" aria-pressed={paused} disabled={!speakers.length} onClick={() => setPaused((value) => !value)}>
-          <span className="speakers-pause__icon" aria-hidden="true">{paused ? "▶" : "Ⅱ"}</span>
           {paused ? "Продолжить" : "Пауза"}
         </button>}
-        <div className="speakers-window"
-          onPointerDown={startSwipe} onPointerMove={moveSwipe}
-          onPointerUp={endSwipe} onPointerCancel={endSwipe} onLostPointerCapture={endSwipe}
-          onDragStart={(event) => { if (!editing && matchMedia("(max-width: 900px)").matches) event.preventDefault(); }}
-          onClick={(event) => {
-          if (swiped.current) return;
-          if (!editing && matchMedia("(max-width: 900px)").matches && (event.target as HTMLElement).closest(".speaker-card")) {
-            setPaused((value) => !value);
-          }
-        }}>
-          <div ref={track} className="speakers-track" style={{ animationDuration: `${Math.max(36, speakers.length * 7)}s` }}>
+        <div ref={scroller} className="speakers-window">
+          <div ref={track} className="speakers-track">
             <div className="speakers-marquee-set">
             {visible.map((card, index) => (
               <article className={`speaker-card ${index % 2 ? "speaker-card--reverse" : ""}`} key={card.id}>
