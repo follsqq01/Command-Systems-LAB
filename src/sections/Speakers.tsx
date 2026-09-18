@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent, type PointerEvent } from "react";
 import { useScrollStage } from "../interaction";
 
 type Speaker = {
@@ -25,6 +25,47 @@ export function Speakers() {
   const [paused, setPaused] = useState(false);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("");
+  const swipe = useRef<{ pointerId: number; x: number; y: number; dragging: boolean } | null>(null);
+  const swiped = useRef(false);
+
+  function startSwipe(event: PointerEvent<HTMLDivElement>) {
+    if (editing || !event.isPrimary || event.button !== 0 || !matchMedia("(max-width: 900px)").matches) return;
+    swiped.current = false;
+    swipe.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, dragging: false };
+  }
+
+  function moveSwipe(event: PointerEvent<HTMLDivElement>) {
+    const gesture = swipe.current;
+    if (!gesture || gesture.pointerId !== event.pointerId) return;
+    const dx = event.clientX - gesture.x;
+    const dy = event.clientY - gesture.y;
+    if (!gesture.dragging) {
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < 8) return;
+      if (Math.abs(dy) > Math.abs(dx)) { swipe.current = null; return; }
+    }
+    const content = track.current;
+    const animation = content?.getAnimations().find((item) =>
+      item instanceof CSSAnimation && item.animationName === "speakers-marquee");
+    const duration = animation?.effect?.getComputedTiming().duration;
+    if (!content || !animation || typeof duration !== "number" || duration <= 0) return;
+    if (!gesture.dragging) {
+      event.currentTarget.setPointerCapture(event.pointerId);
+      gesture.dragging = true;
+      swiped.current = true;
+    }
+    // Shift the existing animation's phase, keeping autoplay and its pause state.
+    const distance = (content.getBoundingClientRect().width + Number.parseFloat(getComputedStyle(content).columnGap)) / 2;
+    const time = Number(animation.currentTime ?? 0) - dx / distance * duration;
+    animation.currentTime = ((time % duration) + duration) % duration;
+    gesture.x = event.clientX;
+    gesture.y = event.clientY;
+  }
+
+  function endSwipe(event: PointerEvent<HTMLDivElement>) {
+    if (swipe.current?.pointerId !== event.pointerId) return;
+    swipe.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+  }
 
   useEffect(() => {
     fetch(contentUrl, { cache: "no-store" })
@@ -157,7 +198,12 @@ export function Speakers() {
           <span className="speakers-pause__icon" aria-hidden="true">{paused ? "▶" : "Ⅱ"}</span>
           {paused ? "Продолжить" : "Пауза"}
         </button>}
-        <div className="speakers-window" onClick={(event) => {
+        <div className="speakers-window"
+          onPointerDown={startSwipe} onPointerMove={moveSwipe}
+          onPointerUp={endSwipe} onPointerCancel={endSwipe} onLostPointerCapture={endSwipe}
+          onDragStart={(event) => { if (!editing && matchMedia("(max-width: 900px)").matches) event.preventDefault(); }}
+          onClick={(event) => {
+          if (swiped.current) return;
           if (!editing && matchMedia("(max-width: 900px)").matches && (event.target as HTMLElement).closest(".speaker-card")) {
             setPaused((value) => !value);
           }

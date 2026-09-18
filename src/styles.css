@@ -1822,7 +1822,7 @@ img {
   .hero-address { font-size: 14px; line-height: 1.45; max-width: 540px; text-wrap: balance; }
   .hero-actions { gap: 10px; }
   .hero-actions .button { font-size: 13px; padding-inline: 10px; }
-  .text-marquee { font-size: 14px; padding-block: 14px; }
+  .text-marquee { font-size: 14px; padding-block: 7px; }
   .atmosphere-media h2 { left: var(--gutter); right: var(--gutter); max-width: none; font-size: var(--heading); }
   .changes-grid { gap: 12px; }
   .change-card { height: 250px; }
@@ -1853,6 +1853,7 @@ img {
   .speakers-stage .section-heading h2 { font-size: var(--heading); }
   .speakers-stage .section-heading p, .benefits .section-heading p { font-size: 16px; line-height: 1.45; }
   .speakers-window { overflow: clip; }
+  .speakers:not(.is-editing) .speakers-window { touch-action: pan-y pinch-zoom; user-select: none; }
   .speakers-track { gap: 16px; }
   .speaker-card { width: min(79vw, 340px); padding: 24px; gap: 24px; scroll-snap-align: start; }
   .speaker-copy h3 { font-size: 20px; }
