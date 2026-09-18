@@ -1,14 +1,14 @@
 import type { AnchorHTMLAttributes } from "react";
 
-// The design supplies a telephone number, but no checkout or application URL.
-// Replace the two contact destinations here when those services are available.
+const ticketUrl = "https://omega-lab.ticketscloud.org";
+
 export const destinations = {
   program: "#program",
   formats: "#formats",
   speakers: "#speakers",
-  tickets: "#tickets",
+  tickets: ticketUrl,
   phone: "tel:+79013404303",
-  booking: "tel:+79013404303",
+  booking: ticketUrl,
   application: "tel:+79013404303",
 };
 
