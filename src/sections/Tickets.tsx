@@ -28,7 +28,7 @@ export function Tickets() {
               <p className="ticket-price">
                 <Price value={price} />
               </p>
-              <p>Раннее бронирование</p>
+              <p>Раннее бронирование — до 13 октября</p>
               <p>
                 Стандартный билет — <Price value={standard} />
                 <br />В день мероприятия — <Price value={last} />

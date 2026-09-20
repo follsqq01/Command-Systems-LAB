@@ -1,5 +1,35 @@
 [
   {
+    "id": "0f816032c98548e4bb4fc8e81d5d33ca",
+    "name": "Андрей Завадских",
+    "description": "СЕО Точка Банк. Работает в компании более 20 лет, последние пять из них — в должности генерального директора. В Точка Банке отвечает за стратегию и развитие экосистемы",
+    "photo": "uploads/speakers/303f3343cd0b9de1aa3b.webp",
+    "fit": "cover",
+    "photoX": 50,
+    "photoY": 0,
+    "zoom": 1.25
+  },
+  {
+    "id": "952c730a63fd4dfb8c78a6363b69b0c5",
+    "name": "Алексей Захаров",
+    "description": "Генеральный директор «Ю-Лайф» и создатель VOLK CrossFit. Более 20 лет работает с командами и бизнес-системами, создаёт сообщества вокруг брендов и превращает клиентов в амбассадоров",
+    "photo": "uploads/speakers/b56ac5739f19a9e4f157.webp",
+    "fit": "cover",
+    "photoX": 54,
+    "photoY": 28,
+    "zoom": 1.6
+  },
+  {
+    "id": "roman-adushkin",
+    "name": "Роман Адушкин",
+    "description": "Бизнесмен, сооснователь группы компаний NRG, человек идей и смыслов, алхимик",
+    "photo": "assets/36ea3.webp",
+    "fit": "contain",
+    "photoX": 45,
+    "photoY": 65,
+    "zoom": 1.75
+  },
+  {
     "id": "alexander-sychev",
     "name": "Александр Сычев",
     "description": "Предприниматель, основатель ST education, сооснователь и ex-CEO Presium Education, консультант по коммуникациям и презентациям",
@@ -13,21 +43,11 @@
     "id": "diana-gladkikh",
     "name": "Диана Гладких",
     "description": "Партнёр группы компаний КЕД, методист с 13-летним опытом, сертифицированный коуч и карьерный консультант международного уровня",
-    "photo": "assets/c6b86.webp",
-    "fit": "contain",
+    "photo": "assets/diana-gladkikh.webp",
+    "fit": "cover",
     "photoX": 50,
-    "photoY": 34,
-    "zoom": 1.95
-  },
-  {
-    "id": "roman-adushkin",
-    "name": "Роман Адушкин",
-    "description": "Бизнесмен, сооснователь группы компаний NRG, человек идей и смыслов, алхимик",
-    "photo": "assets/36ea3.webp",
-    "fit": "contain",
-    "photoX": 45,
-    "photoY": 65,
-    "zoom": 1.75
+    "photoY": 50,
+    "zoom": 1
   },
   {
     "id": "ekaterina-kraivanova",
@@ -78,25 +98,5 @@
     "photoX": 50,
     "photoY": 0,
     "zoom": 1
-  },
-  {
-    "id": "952c730a63fd4dfb8c78a6363b69b0c5",
-    "name": "Алексей Захаров",
-    "description": "Генеральный директор «Ю-Лайф» и создатель VOLK CrossFit. Более 20 лет работает с командами и бизнес-системами, создаёт сообщества вокруг брендов и превращает клиентов в амбассадоров",
-    "photo": "uploads/speakers/b56ac5739f19a9e4f157.webp",
-    "fit": "cover",
-    "photoX": 54,
-    "photoY": 28,
-    "zoom": 1.6
-  },
-  {
-    "id": "0f816032c98548e4bb4fc8e81d5d33ca",
-    "name": "Андрей Завадских",
-    "description": "СЕО Точка Банк. Работает в компании более 20 лет, последние пять из них — в должности генерального директора. В Точка Банке отвечает за стратегию и развитие экосистемы",
-    "photo": "uploads/speakers/303f3343cd0b9de1aa3b.webp",
-    "fit": "cover",
-    "photoX": 50,
-    "photoY": 0,
-    "zoom": 1.25
   }
 ]
