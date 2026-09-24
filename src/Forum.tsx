@@ -6,9 +6,11 @@ import { Program } from "./sections/Program";
 import { Formats } from "./sections/Formats";
 import { Invitation } from "./sections/Invitation";
 import { Speakers } from "./sections/Speakers";
+import { Performance } from "./sections/Performance";
 import { Gallery } from "./sections/Gallery";
 import { Tickets } from "./sections/Tickets";
 import { Benefits } from "./sections/Benefits";
+import { Footer } from "./sections/Footer";
 import { useSmoothScroll } from "./useSmoothScroll";
 import { useRef, useState } from "react";
 import { Preloader } from "./Preloader";
@@ -31,9 +33,11 @@ export function Forum() {
         <Formats />
         <Invitation />
         <Speakers />
-        <Gallery />
+        <Performance />
         <Tickets />
         <Benefits />
+        <Gallery />
+        <Footer />
       </main>
     </>
   );

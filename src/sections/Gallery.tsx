@@ -1,7 +1,7 @@
 import { asset } from "../assets";
 export function Gallery() {
   return (
-    <section id="gallery" className="section gallery">
+    <section id="gallery" className="section gallery gallery--final">
       <h2>Как это было?</h2>
       <div className="gallery-grid">
         {[
