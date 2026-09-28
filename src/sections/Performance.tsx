@@ -24,6 +24,8 @@ export function Performance() {
             className="performance-logo"
             src={asset("impresario.svg")}
             alt="импресарио"
+            loading="lazy"
+            decoding="async"
           />
           <h2 id="performance-title">Кто мы?</h2>
         </div>

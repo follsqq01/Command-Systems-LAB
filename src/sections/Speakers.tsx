@@ -237,7 +237,7 @@ export function Speakers() {
                   )}
                 </div>
                 <div className="speaker-photo">
-                  {card.photo ? <img src={photoUrl(card.photo)} alt={card.name || "Фотография спикера"} style={{ objectFit: card.fit, objectPosition: `${card.photoX}% ${card.photoY}%`, transform: `scale(${card.zoom})`, transformOrigin: `${card.photoX}% ${card.photoY}%` }} /> : <span className="speaker-photo-empty">Фото спикера</span>}
+                  {card.photo ? <img loading="lazy" decoding="async" src={photoUrl(card.photo)} alt={card.name || "Фотография спикера"} style={{ objectFit: card.fit, objectPosition: `${card.photoX}% ${card.photoY}%`, transform: `scale(${card.zoom})`, transformOrigin: `${card.photoX}% ${card.photoY}%` }} /> : <span className="speaker-photo-empty">Фото спикера</span>}
                   {editing && <label className="speaker-photo-change">
                     {card.photo ? "Заменить фото" : "Добавить фото"}
                     <input type="file" accept="image/png,image/jpeg,image/webp" disabled={busy} onChange={(event) => upload(card.id, event)} />
@@ -269,7 +269,7 @@ export function Speakers() {
                 <article className={`speaker-card ${index % 2 ? "speaker-card--reverse" : ""}`} key={`copy-${card.id}`}>
                   <div className="speaker-copy"><h3>{card.name}</h3><p>{formatDescription(card.description)}</p></div>
                   <div className="speaker-photo">
-                    {card.photo ? <img src={photoUrl(card.photo)} alt="" style={{ objectFit: card.fit, objectPosition: `${card.photoX}% ${card.photoY}%`, transform: `scale(${card.zoom})`, transformOrigin: `${card.photoX}% ${card.photoY}%` }} /> : <span className="speaker-photo-empty">Фото спикера</span>}
+                    {card.photo ? <img loading="lazy" decoding="async" src={photoUrl(card.photo)} alt="" style={{ objectFit: card.fit, objectPosition: `${card.photoX}% ${card.photoY}%`, transform: `scale(${card.zoom})`, transformOrigin: `${card.photoX}% ${card.photoY}%` }} /> : <span className="speaker-photo-empty">Фото спикера</span>}
                   </div>
                 </article>
               ))}

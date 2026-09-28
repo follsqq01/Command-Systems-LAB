@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { variables } from "./interaction";
 
-/** Progress follows settled image/font requests, with a short visual interpolation. */
+/** Only first-screen images and fonts should hold the loading overlay open. */
 export function Preloader({ onReady }: { onReady: () => void }) {
   const [progress, setProgress] = useState(0);
   const [leaving, setLeaving] = useState(false);
@@ -11,7 +11,7 @@ export function Preloader({ onReady }: { onReady: () => void }) {
     const previousOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
     const images = [
-      ...document.querySelectorAll<HTMLImageElement>("main img"),
+      ...document.querySelectorAll<HTMLImageElement>("#home img"),
     ].filter((image) => image.loading !== "lazy");
     const total = images.length + 1;
     let settled = 0,

@@ -90,9 +90,14 @@ async function readBody(req: AsyncIterable<Uint8Array>, limit: number): Promise<
   return Buffer.concat(chunks);
 }
 
-export default defineConfig({
-  base: './',
+export default defineConfig(({ command, mode }) => ({
+  // The custom domain stalls on large responses in some networks. Serve
+  // production assets through the working Vercel hostname without redirecting visitors.
+  // Keep local development and preview deployments self-contained.
+  base: command === 'build' && mode === 'production' && process.env.VERCEL_ENV !== 'preview'
+    ? 'https://command-systems-lab.vercel.app/'
+    : './',
   plugins: [react(), localSpeakerEditor()],
   server: { watch: { ignored: ['**/public/content/**', '**/public/uploads/**'] } },
   css: { postcss: { plugins: [] } },
-});
+}));

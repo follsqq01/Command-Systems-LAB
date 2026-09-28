@@ -40,7 +40,7 @@ export function Benefits() {
                   className={`benefit-circle ${ring ? "benefit-circle--ring" : ""}`}
                   key={file}
                 >
-                  <img src={asset(file)} alt={alt} />
+                  <img src={asset(file)} alt={alt} loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
