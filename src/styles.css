@@ -859,11 +859,6 @@ img {
 .performance-title {
   display: grid;
   justify-items: center;
-  gap: 0.4vw;
-}
-.performance-logo {
-  width: 20vw;
-  height: auto;
 }
 .performance-title h2 {
   font-size: 4.3vw;
@@ -895,8 +890,6 @@ img {
 }
 @media (max-width: 900px) {
   .performance-heading { margin-bottom: 24px; }
-  .performance-title { gap: 12px; }
-  .performance-logo { width: min(58vw, 295px); }
   .performance-title h2 { font-size: var(--heading); }
   .performance-description { gap: 16px; font-size: 16px; line-height: 1.45; }
   .performance-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; aspect-ratio: auto; }

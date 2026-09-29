@@ -20,14 +20,7 @@ export function Performance() {
     <section id="performance" className="section performance" aria-labelledby="performance-title">
       <div className="section-heading performance-heading">
         <div className="performance-title">
-          <img
-            className="performance-logo"
-            src={asset("impresario.svg")}
-            alt="импресарио"
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 id="performance-title">Кто мы?</h2>
+          <h2 id="performance-title">«Кто мы?»</h2>
         </div>
         <div className="performance-description">
           <p>
